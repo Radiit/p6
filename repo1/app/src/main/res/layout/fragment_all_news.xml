@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.home.AllNewsFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu"
+        app:layout_constraintTop_toTopOf="parent"
+        app:logo="@drawable/logo"
+        android:background="@color/white"
+        android:elevation="20dp"
+        tools:ignore="MissingConstraints">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="100dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView40"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/gilroy_bold"
+                    android:text="Semua Berita"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView41"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:text="Temukan berita dari seluruh dunia"
+                    android:textColor="#B0B0B0"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView40" />
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontal_sv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:scrollbars="none"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView41">
+
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:paddingRight="40dp"
+                        app:chipSpacingHorizontal="8dp"
+                        android:textColor="@color/chip_text_selector"
+                        app:singleSelection="true">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_ekonomi"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Terbaru"
+                            android:textColor="@color/chip_text_selector"
+                            android:textColorLink="#FFFFFF"
+                            app:chipBackgroundColor="@color/bg_chip_state_list"
+                            app:chipCornerRadius="8dp"
+                            app:chipStrokeColor="@color/colorPrimaryDark"
+                            app:chipStrokeWidth="1dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_finansial"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nasional"
+                            app:chipBackgroundColor="@color/bg_chip_state_list"
+                            app:chipCornerRadius="8dp"
+                            app:chipStrokeColor="@color/colorPrimaryDark"
+                            app:chipStrokeWidth="1dp"
+                            android:textColor="@color/chip_text_selector"
+                            />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_hiburan"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Internasional"
+                            app:chipBackgroundColor="@color/bg_chip_state_list"
+                            app:chipCornerRadius="8dp"
+                            app:chipStrokeColor="@color/colorPrimaryDark"
+                            app:chipStrokeWidth="1dp"
+                            android:textColor="@color/chip_text_selector"
+                            />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_internasional"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ekonomi"
+                            app:chipBackgroundColor="@color/bg_chip_state_list"
+                            app:chipCornerRadius="8dp"
+                            app:chipStrokeColor="@color/colorPrimaryDark"
+                            app:chipStrokeWidth="1dp"
+                            android:textColor="@color/chip_text_selector"
+                            />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_next"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Olahraga"
+                            app:chipBackgroundColor="@color/bg_chip_state_list"
+                            app:chipCornerRadius="8dp"
+                            app:chipStrokeColor="@color/colorPrimaryDark"
+                            app:chipStrokeWidth="1dp"
+                            android:textColor="@color/chip_text_selector"
+                            />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_teknologi"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Teknologi"
+                            app:chipBackgroundColor="@color/bg_chip_state_list"
+                            app:chipCornerRadius="8dp"
+                            app:chipStrokeColor="@color/colorPrimaryDark"
+                            app:chipStrokeWidth="1dp"
+                            android:textColor="@color/chip_text_selector"
+                            />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_hiburan2"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hiburan"
+                            app:chipBackgroundColor="@color/bg_chip_state_list"
+                            app:chipCornerRadius="8dp"
+                            app:chipStrokeColor="@color/colorPrimaryDark"
+                            app:chipStrokeWidth="1dp"
+                            android:textColor="@color/chip_text_selector"
+                            />
+                    </com.google.android.material.chip.ChipGroup>
+                </HorizontalScrollView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_all"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/horizontal_sv" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

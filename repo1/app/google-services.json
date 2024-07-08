@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1024262919795",
+    "project_id": "pukulenamcapstone-d3f25",
+    "storage_bucket": "pukulenamcapstone-d3f25.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024262919795:android:59b590336e988495b3fc06",
+        "android_client_info": {
+          "package_name": "com.dicoding.pukulenamcapstone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024262919795-6s72hg44vcv170f4uk529c8k6m2jduoi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dicoding.pukulenamcapstone",
+            "certificate_hash": "73922a80c6b58d64440eb0e2ca810a86328ccf5d"
+          }
+        },
+        {
+          "client_id": "1024262919795-lbhjovkdvurb2rf6us5rk6r2nvbqglhs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAEK9-70rW5jCJO_fxssqvLjWQHh93f8k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024262919795-lbhjovkdvurb2rf6us5rk6r2nvbqglhs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
