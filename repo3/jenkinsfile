@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+    environment {
+        FLASK_ENV = 'development'
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/bangkit-pukulrata/detection-web.git'
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                sh '''
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install -r requirements.txt
+                '''
+            }
+        }
+        stage('Test') {
+            steps {
+                sh '''
+                    . venv/bin/activate
+                    pytest tests/
+                '''
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh '''
+                    . venv/bin/activate
+                    gcloud builds submit --tag gcr.io/YOUR_PROJECT_ID/your_image_name
+                    gcloud run deploy --image gcr.io/YOUR_PROJECT_ID/your_image_name --platform managed
+                '''
+            }
+        }
+    }
+}
