@@ -1,0 +1,53 @@
+pipeline {
+    agent any
+    environment {
+        FLASK_ENV = 'development'
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/Radiit/p6.git'
+            }
+        }
+        
+        // Stage for repo1
+
+        
+        // Stage for repo2 (model)
+        stage('Install Dependencies for repo2') {
+            steps {
+                dir('repo2') {
+                    sh '''
+                        python3 -m venv venv
+                        . venv/bin/activate
+                        pip install -r requirements.txt
+                    '''
+                }
+            }
+        }
+        stage('Run Notebooks for repo2') {
+            steps {
+                dir('repo2') {
+                    sh '''
+                        . venv/bin/activate
+                        jupyter nbconvert --execute --inplace notebook/bias_modelling.ipynb
+                        jupyter nbconvert --execute --inplace notebook/hoax_detection.ipynb
+                    '''
+                }
+            }
+        }
+        
+        // Stage for repo4
+        stage('Install Dependencies for repo4') {
+            steps {
+                dir('repo4') {
+                    sh '''
+                        python3 -m venv venv
+                        . venv/bin/activate
+                        pip install -r requirements.txt
+                    '''
+                }
+            }
+        }
+    }
+}
